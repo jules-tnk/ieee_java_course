@@ -1,7 +1,7 @@
 package org.example.basicexample;
 
 public class Car {
-    private String brand;
+    public String brand;
     private String model;
     private int year;
     private int speed=0;
@@ -51,10 +51,10 @@ public class Car {
 
     //CONSTRUCTORS
     public Car(String brand, String model, int year, int speed) {
-        setBrand(brand);
-        setModel(model);
-        setSpeed(speed);
-
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.speed = speed;
     }
 
     public Car(String brand, String model, int year) {
@@ -75,6 +75,7 @@ public class Car {
     public void start(){
         if (isActive()){
             System.out.println("Car already active");
+            return;
         }
         System.out.println("Starting car...");
         setSpeed(1);
